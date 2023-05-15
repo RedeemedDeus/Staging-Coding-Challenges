@@ -5,46 +5,7 @@ import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Set;
 
-
 public class Main {
-    public static class Node {
-        int data;
-        Node next;
-
-        Node(int d) {
-            data = d;
-            next = null;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Node node = (Node) o;
-            return data == node.data && Objects.equals(next, node.next);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(data, next);
-        }
-
-        @Override
-        public String toString() {
-            String next = "";
-            if(this.next == null) {
-                next = "null";
-            }
-            else {
-                next = "Node";
-            }
-
-            return "Node[" +
-                    "data=" + data +
-                    ", next=" + next +
-                    ']';
-        }
-    }
 
     public static void main(String[] args) {
         //a)Intersection
