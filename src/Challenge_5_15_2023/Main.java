@@ -33,7 +33,7 @@ public class Main {
         corruptList.next = new Node(8);
         corruptList.next.next = new Node(9);
         corruptList.next.next.next = new Node(10);
-        corruptList.next.next.next.next = corruptList.next.next.next;
+        corruptList.next.next.next.next = corruptList;
 
         System.out.println("Loop Detection");
         Node result2 = getCorruptedNode(corruptList);
@@ -67,9 +67,14 @@ public class Main {
     }
 
     public static Node getCorruptedNode(Node corruptList) {
+        Set<Node> set = new HashSet<>();
+
         while(corruptList != null) {
-            if(corruptList.equals(corruptList.next)){
+            if(set.contains(corruptList)){
                 return corruptList;
+            }
+            else{
+                set.add(corruptList);
             }
 
             corruptList = corruptList.next;

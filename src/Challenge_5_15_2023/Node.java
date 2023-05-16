@@ -20,10 +20,6 @@ public class Node {
         return data == node.data && Objects.equals(next, node.next);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(data, next);
-    }
 
     @Override
     public String toString() {
